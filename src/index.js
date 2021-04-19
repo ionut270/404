@@ -1,18 +1,22 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import { Message } from 'semantic-ui-react'
+import { Button } from 'semantic-ui-react'
 import 'semantic-ui-css/semantic.min.css'
 
+import LOGO from './file.png'
+
+import './index.css'
+
 class App extends React.Component{
+  redirect(){
+    window.location.href="https://uaic.azurewebsites.net/"
+  }
   render(){
     return(
       <div id="static_container">
-        <Message error>
-          <Message.Header>Error</Message.Header>
-          <p>You must be authentificated to use this service</p>
-          <p>Click <a href="https://uaic.azurewebsites.net">here</a> to proceed to the auth page</p>
-        </Message>
+        <img src={LOGO} alt="Amazing logo" />
+        <Button onClick={this.redirect}>Shorten URL'S</Button>
       </div>
     )
   }
